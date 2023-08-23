@@ -1,0 +1,90 @@
+<div class="col-md-6 user-container">
+  <h2 class="text-center">Add Product</h2>
+  <form [formGroup]="productform" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input type="hidden" formControlName="productId" id="productId"/>
+      <label for="product_name">Product Name:</label>
+      <input type="text" formControlName="productName" placeholder="Product Name" name="title" class="form-control"
+             id="product_name" >
+    </div>
+    <br/>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="text" formControlName="quantity" placeholder="quantity" name="quantity" class="form-control"
+             id="quantity">
+    </div>
+    <br/>
+
+    <div class="form-group">
+      <label for="price">Price:</label>
+      <input type="text" formControlName="price" placeholder="price" name="price" class="form-control"
+             id="price">
+    </div>
+
+    <br/>
+    <button class="btn btn-success">Add</button>
+  </form>
+</div> 
+ 
+ 
+ <!-- <h3>Create Product</h3>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4" >  
+    <div [hidden]="submitted" style="width: 400px;">  
+      <form [formGroup]="productform" #saveProduct (ngSubmit)="saveProduct(saveProduct)">  
+          <div class="form-group">  
+              <label for="name">Product Name</label>  
+              <input type="text" class="form-control"  formControlName="product_name" data-toggle="tooltip"   
+                 data-placement="right" title="Enter Product Name" >  
+              <div class="alert alert-danger" *ngIf = "(productName.touched) && (productName.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="productName.errors.required">Product Name is Required</span>  
+                    <span *ngIf = "productName.errors.minlength">   
+                        MinLength Error   
+                    </span>                     
+                </div>  
+          </div>  
+    
+          <div class="form-group">  
+              <label for="name">Product Email</label>  
+              <input type="text" class="form-control" formControlName="Product_email"   
+                data-toggle="tooltip" data-placement="right" title="Enter Product Email">  
+                <div class="alert alert-danger" *ngIf = "(ProductEmail.touched) && (ProductEmail.invalid)"   
+                style="margin-top: 5px;">  
+                  <span *ngIf="ProductEmail.errors.required">Product Email is Required</span>  
+                    <span *ngIf = "ProductEmail.errors.email">   
+                        Invalid Email Format   
+                    </span>                     
+                </div>  
+          </div>  
+    
+          <div class="form-group">  
+              <label for="branch">Product Branch</label>  
+                <select class="form-control" formControlName="Product_branch" data-toggle="tooltip"   
+                      data-placement="right" title="Select Product Branch">  
+                    <option value="null">--Select Branch--</option>  
+                  <option value="B-Tech">B-Tech</option>  
+                  <option value="BCA">BCA</option>  
+                  <option value="MCA">MCA</option>  
+                  <option value="M-Tech">M-Tech</option>  
+                </select>  
+          </div>  
+    
+          <button type="submit" class="btn btn-success">Submit</button>  
+      </form>  
+  </div>  
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>  
+<div class="row">  
+  <div class="col-sm-4"></div>  
+  <div class="col-sm-4">  
+      <div [hidden]="!submitted">  
+         <h4>Product Added SuccessFully!</h4>  
+         <button (click)="addProductForm()" class='btn btn-primary'>Add More Product</button>  
+      </div>        
+  </div>  
+  <div class="col-sm-4"></div>  
+</div>   -->

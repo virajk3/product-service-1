@@ -1,0 +1,50 @@
+<div class="col-md-6 user-container">
+    <h2 class="text-center">Place Order</h2>
+    <form [formGroup]="orderform" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="product_name">Product Name:</label>
+
+        <div class="form-group">  
+            <label for="branch">Products</label>  
+              <select class="form-control" formControlName="productId" data-toggle="tooltip"   
+                    data-placement="right" title="Select Product " (change)="onEditClick($event)">  
+                <option value="null">--Select Branch--</option>  
+                <option *ngFor="let product of productList" [value]="product.productId" [attr.data-isocode]="product.price">
+                    {{product.productName}}</option>   
+              </select>  
+        </div> 
+       <input type="hidden" formControlName="price" value="" id="price"/>
+      </div>
+      <br/>
+  
+      <div class="form-group">
+        <label for="quantity">Quantity:</label>
+        <input type="text" formControlName="quantity" placeholder="quantity" name="quantity" class="form-control"
+               id="quantity" (change)="updateTotalAmount()">
+      </div>
+      <br/>
+   
+      <div class="form-group">
+        <label for="paymentMethod">Payment Method:</label>
+        <select class="form-control" formControlName="paymentMode" data-toggle="tooltip"   
+        data-placement="right" title="Select Payment ">  
+            <option value="null">--Select Payment Mode--</option>  
+            <option value="CASH">CASH</option>  
+            <option value="PAYPAL">PAYPAL</option>  
+            <option value="DEBIT_CARD">DEBIT_CARD</option>  
+            <option value="CREDIT_CARD">CREDIT_CARD</option>  
+            <option value="APPLE_PAY">APPLE_PAY</option>  
+  </select>  
+      </div>
+
+      <div class="form-group">
+        <label for="totalAmount">Total Amount:</label>
+        <input [disabled]="true" type="text" formControlName="totalAmount" placeholder="totalAmount" name="totalAmount" class="form-control"
+               id="totalAmount">
+      </div>
+  
+      <br/>
+      <button class="btn btn-success">Add</button>
+    </form>
+  </div> 
+   
